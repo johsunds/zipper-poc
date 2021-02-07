@@ -19,7 +19,7 @@ def start_workers(n):
 def worker():
     while True:
         job = job_queue.get()
-        app.logger.info("Worker {} started processing job: {}".format(threading.get_ident(), job))
+        app.logger.info("Started processing job: {}".format(job))
         try:
             handle_job(job)
             app.logger.info("Job finished successfully: {}".format(job))
